@@ -14,7 +14,13 @@ and remembers the chat history and recent conversations.
 It uses embeddings and vector stores to send the relevant information to the LLM prompt. Also provides a chat interface
 via the terminal using stdin and stdout. Press 'q' to escape the chat window.
 
+I wrote an article which explores some of the concepts here, as well as walks through building each of the scripts.
+[Can read that here](https://medium.com/@ssmaameri/building-a-multi-document-reader-and-chatbot-with-langchain-and-chatgpt-d1864d47e339)
+
+
 ## Getting started
+
+
 Clone the repository, set up the virtual environment, and install the required packages
 
 ```
