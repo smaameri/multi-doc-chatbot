@@ -16,7 +16,7 @@ documents = loader.load()
 # of 200 characters between the chunks, which helps to give better results
 # and contain the context of the information between chunks
 text_splitter = CharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
-chunked_documents = text_splitter.split_documents(documents)
+documents = text_splitter.split_documents(documents)
 
 # we create our vectorDB, using the OpenAIEmbeddings tranformer to create
 # embeddings from our text chunks. We set all the db information to be stored
