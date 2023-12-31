@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "multi-doc-chatbot"
+version = "0.1.0"
+description = ""
+authors = ["Toby <toby.sachs.quintana@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+python-dotenv = "^1.0.0"
+langchain = "^0.0.353"
+docx2txt = "^0.8"
+pypdf = "^3.17.4"
+openai = "^1.6.1"
+chromadb = "^0.4.21"
+tiktoken = "^0.5.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
