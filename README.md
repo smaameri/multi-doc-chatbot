@@ -1,5 +1,7 @@
 # Multi Document Reader and Chatbot using LangChain and OpenAI
 
+[Updated January 2024 to work with LangChain v0.1.0]
+
 ## Summary
 Provided here are a few python scripts to help get started with building your own multi document reader and chatbot.
 The scripts increase in complexity and features, as follows:
