@@ -1,14 +1,14 @@
 import os
 import sys
 from dotenv import load_dotenv
-from langchain.document_loaders import PyPDFLoader
-from langchain.document_loaders import Docx2txtLoader
-from langchain.document_loaders import TextLoader
-from langchain.embeddings import OpenAIEmbeddings
-from langchain.vectorstores import Chroma
-from langchain.chat_models import ChatOpenAI
 from langchain.chains import ConversationalRetrievalChain
 from langchain.text_splitter import CharacterTextSplitter
+from langchain_community.document_loaders import PyPDFLoader
+from langchain_community.document_loaders import Docx2txtLoader
+from langchain_community.document_loaders import TextLoader
+from langchain_community.vectorstores import Chroma
+from langchain_openai import ChatOpenAI
+from langchain_openai import OpenAIEmbeddings
 
 load_dotenv('.env')
 
@@ -59,7 +59,7 @@ while True:
         sys.exit()
     if query == '':
         continue
-    result = pdf_qa(
+    result = pdf_qa.invoke(
         {"question": query, "chat_history": chat_history})
     print(f"{white}Answer: " + result["answer"])
     chat_history.append((query, result["answer"]))

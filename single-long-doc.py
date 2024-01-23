@@ -1,10 +1,11 @@
 import os
-from langchain.document_loaders import PyPDFLoader
-from langchain.text_splitter import CharacterTextSplitter
-from langchain.vectorstores import Chroma
-from langchain.embeddings import OpenAIEmbeddings
+from dotenv import load_dotenv
 from langchain.chains import RetrievalQA
-from langchain.llms import OpenAI
+from langchain.text_splitter import CharacterTextSplitter
+from langchain_community.document_loaders import PyPDFLoader
+from langchain_community.vectorstores import Chroma
+from langchain_openai import OpenAI
+from langchain_openai import OpenAIEmbeddings
 
 load_dotenv('.env')
 
@@ -34,10 +35,10 @@ vectordb.persist()
 # the prompt and the stored information
 qa_chain = RetrievalQA.from_chain_type(
     llm=OpenAI(),
-    retriever=vectordb.as_retriever(search_kwargs={'k': 6}),
+    retriever=vectordb.as_retriever(search_kwargs={'k': 3}),
     return_source_documents=True
 )
 
 # we can now exectute queries againse our Q&A chain
-result = qa_chain({'query': 'Who is the CV about?'})
+result = qa_chain.invoke({'query': 'Who is the CV about?'})
 print(result['result'])
