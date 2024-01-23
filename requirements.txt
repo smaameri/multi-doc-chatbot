@@ -43,8 +43,9 @@ jsonpointer==2.4
 kubernetes==29.0.0
 langchain==0.1.0
 langchain-community==0.0.12
-langchain-core==0.1.10
-langsmith==0.0.80
+langchain-core==0.1.14
+langchain-openai==0.0.3
+langsmith==0.0.83
 marshmallow==3.20.2
 mmh3==4.1.0
 monotonic==1.6

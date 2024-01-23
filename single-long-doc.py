@@ -35,7 +35,7 @@ vectordb.persist()
 # the prompt and the stored information
 qa_chain = RetrievalQA.from_chain_type(
     llm=OpenAI(),
-    retriever=vectordb.as_retriever(search_kwargs={'k': 6}),
+    retriever=vectordb.as_retriever(search_kwargs={'k': 3}),
     return_source_documents=True
 )
 
